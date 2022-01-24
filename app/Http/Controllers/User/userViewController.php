@@ -361,37 +361,24 @@ class userViewController extends Controller
             // 'all_sub_category' => 'required',
             // 'all_secondary_genre' => 'required',
             'release_date' => 'required',
-
             'religion' => 'required',
             // 'genre' => 'required',
             // 'sub_category' => 'required',
             // 'secondary_genre' => 'required',
             'language' => 'required',
             'isre' => 'required',
-
-
-
             'level' => 'required',
             'pline' => 'required',
             'cline' => 'required',
             'lyrics' => 'required',
-
-
-
             'composer' => 'required',
             'artist' => 'required',
             'mood' => 'required',
             'additional_information' => 'required',
             'callertune' => 'required',
             'album_image' => 'require',
-
-
             'music_release_date' => 'required',
             'premier_release_date' => 'required',
-
-
-
-
         ]);
         if ($validator->fails()) {
             return response()->json(['success' => false, 'errors' => $validator->getMessageBag()->toArray()], 400);
@@ -481,18 +468,11 @@ class userViewController extends Controller
             'pline' => $input['pline'],
             'cline' => $input['cline'],
             'lyrics' => $input['lyrics'],
-
-
             'composer' => $input['composer'],
             'artist' => $input['artist'],
             'mood' => $input['mood'],
             'additional_information' => $input['additional_information'],
-
-
             'callertune' => $input['callertune'],
-
-
-
             'album_image' => $file_notice,
             'audio' => $file_albam,
 
@@ -514,19 +494,6 @@ class userViewController extends Controller
             return response()->json(['success' => true, 'msg' => 'Song add Successfully Done', 'id' => $save->id], 200);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function add_film_action(Request $req)
     {
         $input = $req->all();
