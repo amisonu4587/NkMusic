@@ -66,18 +66,10 @@ Route::group(['domain' =>  env("USER_APP_URL")], function () {
     Route::get('/view_film', [userViewController::class, 'view_film'])->name('view_film');
     Route::get('/view_album', [userViewController::class, 'view_album'])->name('view_album');
     Route::get('/our_service', [userViewController::class, 'our_service'])->name('our_service');
-
     Route::post('/show_subcategory', [userViewController::class, 'show_subcategory']);
     Route::post('/show_description', [userViewController::class, 'show_description']);
     Route::post('/show_religion_details', [userViewController::class, 'show_religion_details']);
-
-
     Route::post('/show_religion_subcategory', [userViewController::class, 'show_religion_subcategory']);
-
-
-
-
-
     Route::get('/user_logout', [userViewController::class, 'user_logout'])->name('user_logout');
 
     Route::get('/abcd', [userViewController::class, 'abcd']);
