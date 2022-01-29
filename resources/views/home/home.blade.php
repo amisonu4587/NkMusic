@@ -46,7 +46,7 @@
           <div class="w-100"></div>
           <div class="col-lg-5">
             <div class="content-thumb">
-              <img src="assets-font/images/about/1.jpg" class="img-fluid" alt="">
+              <img src="assets/img/nk.jpg" class="img-fluid" alt="">
             </div>
           </div>
           <div class="col-lg-7">
@@ -65,6 +65,7 @@
       <svg class="svg-top-left" viewBox="0 0 1920 469.1">
         <path d="M0,1080V610.9H1920V731.7c-19.5,12.6-304.8,186.4-783.6-21.3C640.1,495.1,641.7,726.8,357.5,819.1S204.6,1064.7,0,1080Z" transform="translate(0 -610.9)" fill="#3A1948"/>
       </svg>
+
       <div class="container">
         <div class="row">
           <div class="col">
@@ -76,7 +77,7 @@
           <div class="col-lg-6 col-sm-6">
             <div class="service white-border white-text purple-style">
               <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="78" height="65" viewBox="0 0 78 65">
+                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="78" height="65" viewBox="0 0 78 65">
                   <g id="_1" data-name="1" transform="translate(-495 -1745)">
                     <circle id="Ellipse_32" data-name="Ellipse 32" cx="26.5" cy="26.5" r="26.5" transform="translate(495 1745)" opacity="0.954"/>
                     <g id="_001-chef" data-name="001-chef" transform="translate(508 1745)">
@@ -90,7 +91,11 @@
                       </g>
                     </g>
                   </g>
-                </svg>
+                </svg> --}}
+
+                <img src="assets/img/1.png">
+
+
               </div>
               <h3>Upload and Distribute your Music</h3>
               <h3 style="margin-left: 10px;font-size:1.5rem;text-align:center;margin-top: 11px;">we deliver your music on Instagram, JioSaavn, Wynk Music, Gaana, YouTube Music, YouTube Content ID, Facebook, Resso and more music platforms.</h3>
@@ -99,7 +104,7 @@
           <div class="col-lg-6 col-sm-6">
             <div class="service white-border white-text purple-style">
               <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="77.986" height="65" viewBox="0 0 77.986 65">
+                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="77.986" height="65" viewBox="0 0 77.986 65">
                   <g data-name="3" transform="translate(-1135 -1745)">
                     <circle data-name="Ellipse 34" cx="26.5" cy="26.5" r="26.5" transform="translate(1135 1745)" opacity="0.954"/>
                     <g data-name="004-beer" transform="translate(1121.5 1745)">
@@ -125,7 +130,8 @@
                       </g>
                     </g>
                   </g>
-                </svg>
+                </svg> --}}
+                <img src="assets/img/2.png">
               </div>
               <h3>Mobile callertune (CRBT)</h3>
               <h3 style="margin-left: 10px;font-size: 1.5rem;text-align:center;margin-top: 11px;">Jio – JioSaavn, Airtel – Wynk Music, Bsnl and Vi</h3>
@@ -134,7 +140,7 @@
           <div class="col-lg-6 col-sm-6">
             <div class="service white-border white-text purple-style">
               <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="77.986" height="65" viewBox="0 0 77.986 65">
+                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="77.986" height="65" viewBox="0 0 77.986 65">
                   <g data-name="3" transform="translate(-1135 -1745)">
                     <circle data-name="Ellipse 34" cx="26.5" cy="26.5" r="26.5" transform="translate(1135 1745)" opacity="0.954"/>
                     <g data-name="004-beer" transform="translate(1121.5 1745)">
@@ -160,7 +166,9 @@
                       </g>
                     </g>
                   </g>
-                </svg>
+                </svg> --}}
+                <img src="assets/img/3.png">
+
               </div>
               <h3>
                 Youtube Monetization</h3>
@@ -171,7 +179,7 @@
           <div class="col-lg-6 col-sm-6">
             <div class="service white-border white-text purple-style">
               <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="85" height="65" viewBox="0 0 85 65">
+                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="85" height="65" viewBox="0 0 85 65">
                   <g id="_4" data-name="4" transform="translate(-1400 -1745)">
                     <circle id="Ellipse_35" data-name="Ellipse 35" cx="26.5" cy="26.5" r="26.5" transform="translate(1400 1745)" opacity="0.954"/>
                     <g id="_003-dj" data-name="003-dj" transform="translate(1420 1745)">
@@ -196,7 +204,9 @@
                       <path id="Path_1234" data-name="Path 1234" d="M320.55,363.326h-1.929V361.4h1.929Zm0-3.857h-1.929V357.54h1.929Zm0-3.857h-1.929v-6.428h1.929Zm0,0" transform="translate(-278.184 -305.075)" fill="#ffffff"/>
                     </g>
                   </g>
-                </svg>
+                </svg> --}}
+                <img src="assets/img/4.png">
+
               </div>
               <h3>Receive your Earnings</h3>
               <h3 style="margin-left: 10px;font-size: 1.5rem;text-align:center;margin-top: 11px;">Payments direct to your bank account.</h3>
