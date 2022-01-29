@@ -6,9 +6,11 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta content="Fully Responsive Bootstrap 4 Admin Dashboard Template" name="description">
     <meta content="Spruko" name="author">
+    <meta content="{{ csrf_token() }}" name="csrf-token">
 
     {{-- Title --}}
-    <title>Adon - Creative Admin Multipurpose Responsive Dashboard Template</title>
+    {{-- <title>Adon - Creative Admin Multipurpose Responsive Dashboard Template</title> --}}
+    <title>@yield('title')</title>
 
     {{-- Favicon --}}
     <link href="assets/img/brand/favicon.png" rel="icon" type="image/png">
@@ -201,7 +203,7 @@
                             </a>
                             <ul class="slide-menu">
                                 <li>
-                                    <a href="/add_gallery" class="slide-item">Add Gallery Image</a>
+                                    <a href="/add_image" class="slide-item">Add Gallery Image</a>
                                 </li>
                                 <li>
                                     <a href="/gallery" class="slide-item">View Gallery Images</a>
@@ -216,10 +218,10 @@
                             </a>
                             <ul class="slide-menu">
                                 <li>
-                                    <a href="/add_platform" class="slide-item">Add Platform Image</a>
+                                    <a href="/add_platform" class="slide-item">Add Platform</a>
                                 </li>
                                 <li>
-                                    <a href="/platform" class="slide-item">View Platform Images</a>
+                                    <a href="/platform" class="slide-item">View Platform</a>
                                 </li>
                             </ul>
                         </li>

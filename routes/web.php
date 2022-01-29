@@ -184,8 +184,9 @@ Route::group(['domain' =>  env("ADMIN_APP_URL"), 'middleware' => 'adminAuth'], f
     Route::get('/content_details', [adminController::class, 'content_details'])->name('content_details');
     //gallery routes 
     Route::get('/gallery', [adminController::class, 'viewGallery']);
-    Route::get('/add_gallery', [adminController::class, 'addGallery']);
-    Route::post('/add_gallery', [adminController::class, 'addGalleryAction']);
+    Route::get('/add_image', [adminController::class, 'addGalleryImage']);
+    Route::post('/add_image', [adminController::class, 'addGalleryImageAction']);
+    Route::delete('/gallery', [adminController::class, 'deleteGalleryImage']);
     //platform routes
     Route::get('/platform', [adminController::class, 'viewPlatform']);
     Route::get('/add_platform', [adminController::class, 'addPlatform']);

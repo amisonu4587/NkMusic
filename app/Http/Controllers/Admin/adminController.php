@@ -27,6 +27,8 @@ use App\Models\Contentstatus;
 use App\Models\Service;
 
 use App\Http\Controllers\Controller;
+use App\Models\Gallery;
+use App\Models\Platform;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -976,8 +978,6 @@ class adminController extends Controller
 
         $gs = DB::table('song')->where('id', $request->id)
             ->update(['status' => $request->film_status]);
-
-
         if ($gs) {
             toastr()->success('Status Add successfully done');
             return redirect()->route('view_releases');
@@ -1069,18 +1069,6 @@ class adminController extends Controller
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
     public function edit_fisre_action(Request $request)
     {
         $input = $request->all();
@@ -1097,17 +1085,9 @@ class adminController extends Controller
             return redirect()->route('view_newsdsfdf');
         }
     }
-
-
-
-
-
     public function add_partner_action(Request $req)
     {
         $input = $req->all();
-
-
-
         $file_notice = null;
         if (isset($input['partner_image'])) {
             $partner_image = $input['partner_image'];
@@ -1115,23 +1095,8 @@ class adminController extends Controller
             $profile_path = public_path('/partner');
             $partner_image->move($profile_path, $file_notice);
         }
-
-
-
         $add_pdf = [
-
-
-
-
-
             'partner_image' => $file_notice,
-
-
-
-
-            //'price' => $input['price'],
-
-
         ];
         $save = Partner::create($add_pdf);
 
@@ -1146,9 +1111,6 @@ class adminController extends Controller
     public function add_prime_partner_action(Request $req)
     {
         $input = $req->all();
-
-
-
         $file_notice = null;
         if (isset($input['ppartner_image'])) {
             $ppartner_image = $input['ppartner_image'];
@@ -1426,11 +1388,85 @@ class adminController extends Controller
     //gallery part
     protected function viewGallery()
     {
-        return view('gallery/view_gallery');
+        $galleryData = Gallery::orderBy('id', 'asc')->paginate(8);
+        // return $data;
+        return view('Admin.gallery.view_gallery', ['galleryData' => $galleryData]);
     }
-    protected function addGallery(Request $req)
+    protected function addGalleryImage()
+    {
+        return view('Admin.gallery.add_gallery');
+    }
+    protected function addGalleryImageAction(Request $req)
+    {
+        $data = $req->all() ?? [];
+        $validator = Validator::make($data, [
+            'image_name' => 'required',
+            'image_file' => 'required|mimes:jpg,jpeg,png,gif',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['success' => false, 'errors' => $validator->getMessageBag()->toArray()], 400);
+        }
+        $image = $data['image_file'];
+        $imagename = $data['image_name'] . rand() . '.' . $image->getClientOriginalExtension();
+        $path = public_path('/uploads');
+        $image->move($path, $imagename);
+        $save = Gallery::create([
+            'image_name' => $data['image_name'],
+            'image_file' => '/uploads/' . $imagename
+        ]);
+        if ($save) {
+            $msg = 'Gallery image added successfully';
+        } else {
+            $msg = 'Failed to add gallery image';
+        }
+
+        toastr()->success($msg);
+        return back();
+    }
+    protected function deleteGalleryImage(Request $req)
     {
     }
+    //gallery part end
+    //platform part
+    protected function viewPlatform()
+    {
+        $platformData = Platform::all();
+        return view('Admin.platform.view_platform', ['platformData' => $platformData]);
+    }
+    protected function addPlatform()
+    {
+        return view('Admin.platform.add_platform');
+    }
+    protected function addPlatformAction(Request $req)
+    {
+        $data = $req->all() ?? [];
+        $validator = Validator::make($data, [
+            'platform_name' => 'required',
+            'platform_image' => 'required|mimes:jpg,jpeg,png,gif',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['success' => false, 'errors' => $validator->getMessageBag()->toArray()], 400);
+        }
+        $image = $data['platform_image'];
+        $imagename = $data['platform_name'] . rand() . '.' . $image->getClientOriginalExtension();
+        $path = public_path('/uploads');
+        $image->move($path, $imagename);
+        $save = Platform::create([
+            'name' => $data['platform_name'],
+            'image' => '/uploads/' . $imagename
+        ]);
+        if ($save) {
+            $msg = 'Platform added successfully';
+        } else {
+            $msg = 'Failed to add platform';
+        }
+        toastr()->success($msg);
+        return back();
+    }
+    protected function deleteGalleryPlatform(Request $req)
+    {
+    }
+    //platform part end
     protected function admin_logout()
     {
         Auth::logout();
