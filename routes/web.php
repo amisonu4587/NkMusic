@@ -22,10 +22,9 @@ use App\Http\Middleware\Test;
 
 
 Route::middleware([Test::class])->group(function () {
-
     Route::get('ttt', [testController::class, 'test']);
 });
-
+//user panel
 Route::group(['domain' =>  env("USER_APP_URL")], function () {
     Route::get('/', [userViewController::class, 'index']);
     Route::get('/about', [userViewController::class, 'about']);
@@ -52,17 +51,12 @@ Route::group(['domain' =>  env("USER_APP_URL")], function () {
     Route::post('/sand_otp', [userViewController::class, 'sand_otp']);
     Route::get('/view_release', [userViewController::class, 'view_release'])->name('view_release');
     Route::get('/view_movie', [userViewController::class, 'view_movie'])->name('view_movie');
-
-
     Route::post('/edit_track_action', [userViewController::class, 'edit_track_action'])->name('edit_track');
     Route::post('/edit_store_action', [userViewController::class, 'edit_store_action'])->name('edit_store');
     Route::get('/add_film', [userViewController::class, 'add_film']);
-
     Route::post('/add_contact_action', [userViewController::class, 'add_contact_action'])->name('add_contact_action');
-
     Route::get('/deletealbam', [userViewController::class, 'deletealbam'])->name('deletealbam');
     Route::get('/deletefilm', [userViewController::class, 'deletefilm'])->name('deletefilm');
-
     Route::get('/view_film', [userViewController::class, 'view_film'])->name('view_film');
     Route::get('/view_album', [userViewController::class, 'view_album'])->name('view_album');
     Route::get('/our_service', [userViewController::class, 'our_service'])->name('our_service');
@@ -71,14 +65,9 @@ Route::group(['domain' =>  env("USER_APP_URL")], function () {
     Route::post('/show_religion_details', [userViewController::class, 'show_religion_details']);
     Route::post('/show_religion_subcategory', [userViewController::class, 'show_religion_subcategory']);
     Route::get('/user_logout', [userViewController::class, 'user_logout'])->name('user_logout');
-
     Route::get('/abcd', [userViewController::class, 'abcd']);
-    // Route::get('/dashboard', function () {
-    //     return view('dashboard');
-    // });
 });
-
-
+// Landing Page  
 Route::group(['domain' =>  env("FONT_APP_URL"), 'middleware' => 'userAuth'], function () {
     Route::get('/', [userController::class, 'index1']);
     Route::get('/u_logout', [userController::class, 'u_logout'])->name('u_logout');
@@ -88,12 +77,7 @@ Route::group(['domain' =>  env("FONT_APP_URL"), 'middleware' => 'userAuth'], fun
     Route::get('/all_payout', [userController::class, 'all_payout'])->name('all_payout');
     Route::get('/all_revenue', [userController::class, 'all_revenue'])->name('all_revenue');
 });
-
-
-
-
-
-
+//Admin panel
 Route::group(['domain' =>  env("ADMIN_APP_URL"), 'middleware' => 'adminAuth'], function () {
     Route::get('ttt', [testController::class, 'test'])->middleware('Test');
     Route::get('/', [adminController::class, 'index1']);
@@ -198,6 +182,14 @@ Route::group(['domain' =>  env("ADMIN_APP_URL"), 'middleware' => 'adminAuth'], f
     Route::post('/add_payout_action', [adminController::class, 'add_payout_action'])->name('add_payout_action');
     Route::get('/view_payout_partner', [adminController::class, 'view_payout_partner'])->name('view_payout_partner');
     Route::get('/content_details', [adminController::class, 'content_details'])->name('content_details');
+    //gallery routes 
+    Route::get('/gallery', [adminController::class, 'viewGallery']);
+    Route::get('/add_gallery', [adminController::class, 'addGallery']);
+    Route::post('/add_gallery', [adminController::class, 'addGalleryAction']);
+    //platform routes
+    Route::get('/platform', [adminController::class, 'viewPlatform']);
+    Route::get('/add_platform', [adminController::class, 'addPlatform']);
+    Route::post('/add_platform', [adminController::class, 'addPlatformAction']);
 });
 Route::group(['domain' =>  env("VENDOR_APP_URL")], function () {
 });

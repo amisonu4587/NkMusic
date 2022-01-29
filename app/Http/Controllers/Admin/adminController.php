@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Category;
 use App\Models\Payout;
-
 use App\Models\User;
 use App\Models\Partner;
 use App\Models\Release;
@@ -30,6 +28,7 @@ use App\Models\Service;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class adminController extends Controller
@@ -42,10 +41,7 @@ class adminController extends Controller
         $image = DB::table('service')->where('id', $request->id)
             ->first();
         $first1 = $image->service_image;
-
-
         unlink("service/{$first1}");
-
         $rrr = Service::where('id', $id)->delete();
         if ($rrr) {
             toastr()->success('Service Image Delete successfully!');
@@ -74,38 +70,22 @@ class adminController extends Controller
 
         $validator = Validator::make($input, [
             'username' => 'required',
-
             'email' => 'required',
             'phone' => 'required',
-
-
-
-
-
             'name' => 'required',
-
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             //'price' => 'required',
-
         ]);
         if ($validator->fails()) {
             return response()->json(['success' => false, 'errors' => $validator->getMessageBag()->toArray()], 400);
         }
-
-
-
         $add_register = [
             'name' => $input['name'],
             'username' => $input['username'],
             'email' => $input['email'],
-
             'phone' => $input['phone'],
-
             'password' => Hash::make($input['password']),
             'role' => 2
-            //'price' => $input['price'],
-
-
         ];
         // dd( $add_register);
         $save = User::create($add_register);
@@ -126,9 +106,7 @@ class adminController extends Controller
         }
 
         $add_pdf = [
-
             'service_image' => $file_notice,
-
         ];
         $save = Service::create($add_pdf);
 
@@ -154,11 +132,8 @@ class adminController extends Controller
         $id = $request->id;
         // dd($id);
         $this->validate($request, ['category_name' => ['required']]);
-
         $gs = DB::table('cats')->where('cat_id', $request->id)
             ->update(['cat_name' => $request->category_name]);
-
-
         if ($gs) {
             toastr()->success('Category Update successfully!');
             return redirect()->route('viewcategory');
@@ -182,11 +157,8 @@ class adminController extends Controller
         $id = $request->id;
         // dd($id);
         $this->validate($request, ['sub_cat_name' => ['required']]);
-
         $gs = DB::table('sub_cats')->where('sub_cat_id', $request->id)
             ->update(['sub_cat_name' => $request->sub_cat_name]);
-
-
         if ($gs) {
             toastr()->success('Sub Category Update successfully!');
             return redirect()->route('view_subcategory');
@@ -200,8 +172,6 @@ class adminController extends Controller
     public function delete_details(Request $request)
     {
         $id = $request->id;
-
-
         $rrr = Details::where('sub_sub_cat_id', $id)->delete();
         if ($rrr) {
             toastr()->success('Details Delete successfully done');
@@ -224,11 +194,8 @@ class adminController extends Controller
         $id = $request->id;
         // dd($id);
         $this->validate($request, ['religion_category_name' => ['required']]);
-
         $gs = DB::table('religion_cat')->where('cat_id', $request->id)
             ->update(['cat_name' => $request->religion_category_name]);
-
-
         if ($gs) {
             toastr()->success('Category Update successfully!');
             return redirect()->route('view_religion_category');
@@ -322,10 +289,6 @@ class adminController extends Controller
         if ($validator->fails()) {
             return response()->json(['success' => false, 'errors' => $validator->getMessageBag()->toArray()], 400);
         }
-
-
-
-
         $file_notice = null;
         if (isset($input['url_image'])) {
             $url_image = $input['url_image'];
@@ -333,32 +296,17 @@ class adminController extends Controller
             $profile_path = public_path('/url');
             $url_image->move($profile_path, $file_notice);
         }
-
-
-
-
         $add_url = [
             'user_id' => $input['user_id'],
             'email' => $file_notice,
             'name' => $input['name'],
-
-
         ];
         $save = Url::create($add_url);
-
         if ($save) {
             toastr()->success('add Sucessfully');
             return redirect()->route('add_url');
         }
     }
-
-
-
-
-
-
-
-
     public function add_crbt(Request $request)
     {
         $data = [];
@@ -367,8 +315,6 @@ class adminController extends Controller
 
         return view('Admin.crbt.add_crbt', $data);
     }
-
-
     public function add_crbt_action(Request $req)
     {
         $input = $req->all();
@@ -376,16 +322,10 @@ class adminController extends Controller
             'user_id' => 'required',
             'crbt_image' => 'required',
             'name' => 'required',
-
-
-
         ]);
         if ($validator->fails()) {
             return response()->json(['success' => false, 'errors' => $validator->getMessageBag()->toArray()], 400);
         }
-
-
-
         $file_notice = null;
         if (isset($input['crbt_image'])) {
             $crbt_image = $input['crbt_image'];
@@ -393,25 +333,17 @@ class adminController extends Controller
             $profile_path = public_path('/crbt');
             $crbt_image->move($profile_path, $file_notice);
         }
-
         $add_crbt = [
             'user_id' => $input['user_id'],
             'email' => $file_notice,
             'name' => $input['name'],
-
-
         ];
         $save = Crbt::create($add_crbt);
-
         if ($save) {
             toastr()->success('add Sucessfully');
             return redirect()->route('add_crbt');
         }
     }
-
-
-
-
     public function music_revenue(Request $request)
     {
         $data = [];
@@ -590,19 +522,14 @@ class adminController extends Controller
             'user_id' => 'required',
             'month' => 'required',
             'revenue' => 'required',
-
-
         ]);
         if ($validator->fails()) {
             return response()->json(['success' => false, 'errors' => $validator->getMessageBag()->toArray()], 400);
         }
-
         $add_youtube = [
             'user_id' => $input['user_id'],
             'month' => $input['month'],
-
             'revenue' => $input['revenue'],
-
         ];
         $save = Yrevenue::create($add_youtube);
 
@@ -638,10 +565,6 @@ class adminController extends Controller
         //    toastr()->success('Category Add successfully!');
         return view('Admin.additional_info.add_additional_info');
     }
-
-
-
-
     public function add_subcategory(Request $request)
     {
         $data = [];
@@ -650,9 +573,6 @@ class adminController extends Controller
 
         return view('Admin.subcategory.add_subcategory', $data);
     }
-
-
-
     public function add_religion_subcategory(Request $request)
     {
         $data = [];
@@ -668,8 +588,6 @@ class adminController extends Controller
         // dd($data);
         return view('Admin.category.view_category', $data);
     }
-
-
     public function view_religion_category(Request $request)
     {
         $data = [];
@@ -696,9 +614,6 @@ class adminController extends Controller
         // dd($data);
         return view('Admin.additional_info.view_additional_info', $data);
     }
-
-
-
     public function view_crbt(Request $request)
     {
         $data = [];
@@ -707,12 +622,6 @@ class adminController extends Controller
         // dd($data);
         return view('Admin.crbt.view_crbt', $data);
     }
-
-
-
-
-
-
     public function add_ppartners(Request $request)
     {
         //toastr()->success('Category Add successfully!');
@@ -754,12 +663,6 @@ class adminController extends Controller
         //toastr()->success('Category Add successfully!');
         return view('Admin.release.add_isre_code');
     }
-
-
-
-
-
-
     public function film_details(Request $request)
     {
         //toastr()->success('Category Add successfully!');
@@ -863,40 +766,16 @@ class adminController extends Controller
         // dd($data);
         return view('Admin.register.view_register', $data);
     }
-
-
-
-
     public function edit_register(Request $request)
     {
-
-
         $id = $request->id;
         $data = [];
         $data['event_details'] = DB::table('users')->where('id', $request->id)
             ->first();
-
-
         return view('Admin.register.edit_register', $data);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function edit_details(Request $request)
     {
-
-
         $id = $request->id;
         $data = [];
         $data['event_details'] = DB::table('users')->where('id', $request->id)
@@ -908,21 +787,12 @@ class adminController extends Controller
 
     public function edit_password(Request $request)
     {
-
-
         $id = $request->id;
         $data = [];
         $data['event_details'] = DB::table('users')->where('id', $request->id)
             ->first();
         return view('Admin.register.change_password', $data);
     }
-
-
-
-
-
-
-
     public function view_message(Request $request)
     {
         $data = [];
@@ -932,13 +802,6 @@ class adminController extends Controller
         //toastr()->success('Category Add successfully!');
         return view('Admin.message.message', $data);
     }
-
-
-
-
-
-
-
     public function deletealbams(Request $request)
     {
         $id = $request->id;
@@ -956,23 +819,14 @@ class adminController extends Controller
             return redirect()->route('view_releases');
         }
     }
-
-
-
-
-
     public function deletealbummp3(Request $request)
     {
         $id = $request->id;
         $image = DB::table('song')->where('id', $request->id)
             ->first();
 
-
         $first2 = $image->audio;
-
         unlink("audio/{$first2}");
-
-
         $gs = DB::table('albam')->where('id', $request->id)
             ->update([
                 'audio'  => NULL,
@@ -982,10 +836,6 @@ class adminController extends Controller
             return redirect()->route('view_releases');
         }
     }
-
-
-
-
 
     //  public function deletealbammp3(Request $request){
     //     $id=$request->id;
@@ -1002,17 +852,6 @@ class adminController extends Controller
     //                     // return redirect()->route('view_releases');
     //                 } 
     //             }
-
-
-
-
-
-
-
-
-
-
-
 
     public function deletefilms(Request $request)
     {
@@ -1031,23 +870,13 @@ class adminController extends Controller
             return redirect()->route('view_films');
         }
     }
-
-
-
-
-
     public function deletefilmmp3(Request $request)
     {
         $id = $request->id;
         $image = DB::table('film')->where('id', $request->id)
             ->first();
-
-
         $first2 = $image->audio;
-
         unlink("audio/{$first2}");
-
-
         $gs = DB::table('film')->where('id', $request->id)
             ->update([
                 'audio'  => NULL,
@@ -1058,28 +887,12 @@ class adminController extends Controller
         }
     }
 
-
-
-
-
-
-
-
     public function edit_register_action(Request $request)
     {
 
         $this->validate($request, ['bank' => ['required'], 'ifcs' => ['required'], 'ac_name' => ['required'], 'bank_name' => ['required'], 'branch' => ['required']]);
-
-
-
-
-
-
-
         $gs = DB::table('users')->where('id', $request->id)
             ->update(['bank' => $request->bank, 'ifcs' => $request->ifcs, 'ac_name' => $request->ac_name, 'bank_name' => $request->bank_name, 'branch' => $request->branch,]);
-
-
         if ($gs) {
             toastr()->success('Bank Details Add successfully!');
             return redirect()->route('viewregister');
@@ -1088,19 +901,9 @@ class adminController extends Controller
             return redirect()->route('viewregister');
         }
     }
-
-
-
-
-
     public function edit_details_action(Request $request)
     {
-
         // $this->validate($request, ['name' => ['required'],'subscription' => ['required'],'company_name' => ['required'],'label_name' => ['required'],'revenue_share' => ['required'],'membership' => ['required'],'service' => ['required']]);
-
-
-
-
         if ($request->user_image != '') {
             $event_details = DB::table('users')->where('id', $request->id)->first();
             $first1 = $event_details->user_image;
@@ -1135,15 +938,6 @@ class adminController extends Controller
         }
     }
 
-
-
-
-
-
-
-
-
-
     public function edit_password_action(Request $request)
     {
         // dd($request->password);
@@ -1151,8 +945,6 @@ class adminController extends Controller
 
         $gs = DB::table('users')->where('id', $request->id)
             ->update(['password' => Hash::make($request->password)]);
-
-
         if ($gs) {
             toastr()->success('Password Update successfully!');
             return redirect()->route('viewregister');
@@ -1161,13 +953,6 @@ class adminController extends Controller
             return redirect()->route('viewregister');
         }
     }
-
-
-
-
-
-
-
 
     public function edit_status_action(Request $request)
     {
@@ -1185,13 +970,6 @@ class adminController extends Controller
             return redirect()->route('view_films');
         }
     }
-
-
-
-
-
-
-
     public function edit_astatus_action(Request $request)
     {
         $input = $request->all();
@@ -1273,14 +1051,6 @@ class adminController extends Controller
                 ->back();
         }
     }
-
-
-
-
-
-
-
-
 
     public function edit_isre_action(Request $request)
     {
@@ -1386,23 +1156,9 @@ class adminController extends Controller
             $profile_path = public_path('/ppartner');
             $ppartner_image->move($profile_path, $file_notice);
         }
-
-
-
         $add_pdf = [
-
-
-
-
-
             'ppartner_image' => $file_notice,
-
-
-
-
             //'price' => $input['price'],
-
-
         ];
         $save = Primepartner::create($add_pdf);
 
@@ -1412,15 +1168,6 @@ class adminController extends Controller
             return redirect()->route('add_ppartners');
         }
     }
-
-
-
-
-
-
-
-
-
 
     public function viewpartner(Request $request)
     {
@@ -1468,10 +1215,7 @@ class adminController extends Controller
         $image = DB::table('partner')->where('id', $request->id)
             ->first();
         $first1 = $image->partner_image;
-
-
         unlink("partner/{$first1}");
-
         $rrr = Partner::where('id', $id)->delete();
         if ($rrr) {
             toastr()->success('Delete successfully!');
@@ -1479,11 +1223,6 @@ class adminController extends Controller
             // return redirect()->back()->with(['message' => 'Folder Delete Successfully', 'alert' => 'alert-danger']);
         }
     }
-
-
-
-
-
     public function view_subcategory(Request $request)
     {
         $data = [];
@@ -1499,21 +1238,12 @@ class adminController extends Controller
         return view('Admin.religion_sub_category.view_religion_sub_category', $data);
     }
 
-
-
     public function add_details(Request $request)
     {
         $data4 = Category::orderBy('cat_id', 'DESC')->get();
         $data3 = Subcategory::orderBy('sub_cat_id', 'DESC')->get();
         return view('Admin.details.add_details')->with('data4', $data4)->with('data3', $data3);
     }
-
-
-
-
-
-
-
 
     public function view_details(Request $request)
     {
@@ -1524,11 +1254,6 @@ class adminController extends Controller
 
         return view('Admin.details.view_details', $data);
     }
-
-
-
-
-
     public function view_religion_details(Request $request)
     {
 
@@ -1536,9 +1261,6 @@ class adminController extends Controller
         $data['details_details'] = DB::table('religion_subcat')->join('religion_details', 'religion_subcat.sub_cat_id', '=', 'religion_details.sub_cat_id')->get();
         return view('Admin.religion_details.view_religion_details', $data);
     }
-
-
-
 
     public function add_category_action(Request $req)
     {
@@ -1603,19 +1325,6 @@ class adminController extends Controller
             return redirect()->route('add_additional');
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function add_subcategory_action(Request $req)
     {
         $input = $req->all();
@@ -1689,12 +1398,6 @@ class adminController extends Controller
         }
     }
 
-
-
-
-
-
-
     public function add_religion_details_action(Request $req)
     {
         $input = $req->all();
@@ -1720,10 +1423,14 @@ class adminController extends Controller
             return redirect()->route('view_religion_details');
         }
     }
-
-
-
-
+    //gallery part
+    protected function viewGallery()
+    {
+        return view('gallery/view_gallery');
+    }
+    protected function addGallery(Request $req)
+    {
+    }
     protected function admin_logout()
     {
         Auth::logout();

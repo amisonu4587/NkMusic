@@ -19,30 +19,32 @@
                     <table id="edd" class="table table-striped table-bordered w-100 text-nowrap">
                         <thead>
                             <tr>
-                              
+
                                 <th class="wd-25p">Prime Partners Image</th>
-                               
+
                                 <th class="wd-25p">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @if(isset($ppartners_details))
-                         @foreach($ppartners_details as $details)
-                            <tr>
-                                
-                                <td><img src="ppartner/{{$details->ppartner_image}}" style="width: 20%;"></td>
-                               
-                              
-                                <td><a  href="delete_prime_partner?id={{$details->id}}" class="btn btn-youtube mt-1 mb-1 " ><i class="fa fa-trash"></i>Delete</a></td>
-                               
-                               
-                              
+                            @if (isset($ppartners_details))
+                                @foreach ($ppartners_details as $details)
+                                    <tr>
 
-                            </tr>
+                                        <td><img src="ppartner/{{ $details->ppartner_image }}" style="width: 20%;"></td>
 
-                            @endforeach
+
+                                        <td><a href="delete_prime_partner?id={{ $details->id }}"
+                                                class="btn btn-youtube mt-1 mb-1 "><i
+                                                    class="fa fa-trash"></i>Delete</a></td>
+
+
+
+
+                                    </tr>
+
+                                @endforeach
                             @endif
-                          
+
                         </tbody>
                     </table>
                 </div>
@@ -50,12 +52,9 @@
         </div>
     </div>
 </div>
-@endsection
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
-        $(function () {
+    $(document).ready(function() {
+        $(function() {
             $("#edd").dataTable({
                 bPaginate: true,
                 bLengthChange: true,
@@ -67,3 +66,4 @@
         });
     });
 </script>
+@endsection
