@@ -51,21 +51,40 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function() {
-            $(function() {
-                $("#edd").dataTable({
-                    bPaginate: true,
-                    bLengthChange: true,
-                    bFilter: true,
-                    bSort: false,
-                    bInfo: true,
-                    bAutoWidth: false,
-                });
-                $('#deleteGalleryImage').on('click', function() {
-                    let id = $(this).attr('data-id')
-                    let url = $(this).attr('data-url')
-                    let csrf = $('meta[name="csrf-token"]').attr('content')
-                })
+            $("#edd").dataTable({
+                bPaginate: true,
+                bLengthChange: true,
+                bFilter: true,
+                bSort: false,
+                bInfo: true,
+                bAutoWidth: false,
             });
+            $(document).on('click', '#deleteGalleryImage', function() {
+                let id = $(this).attr('data-id')
+                let url = $(this).attr('data-url')
+                let csrf = $('meta[name="csrf-token"]').attr('content')
+                let data = {
+                    _token: csrf,
+                    galleryId: id,
+                    action: 'delete'
+                };
+                $.ajax({
+                    url: url,
+                    method: 'DELETE',
+                    data: data,
+                    success: function(res) {
+                        if (res.status) {
+                            swal('Success!', res.message,
+                                'success');
+                            setInterval(() => {
+                                location.reload()
+                            }, 4000);
+                        } else
+                            swal('Error!', res.message,
+                                'error');
+                    }
+                })
+            })
         });
     </script>
 @endsection

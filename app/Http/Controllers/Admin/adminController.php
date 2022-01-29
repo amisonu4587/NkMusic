@@ -1400,12 +1400,13 @@ class adminController extends Controller
     {
         $data = $req->all() ?? [];
         $validator = Validator::make($data, [
-            'image_name' => 'required',
             'image_file' => 'required|mimes:jpg,jpeg,png,gif',
         ]);
+
         if ($validator->fails()) {
             return response()->json(['success' => false, 'errors' => $validator->getMessageBag()->toArray()], 400);
         }
+        $data['image_name'] = $data['image_name'] ?? 'gallery_image';
         $image = $data['image_file'];
         $imagename = $data['image_name'] . rand() . '.' . $image->getClientOriginalExtension();
         $path = public_path('/uploads');
@@ -1425,6 +1426,15 @@ class adminController extends Controller
     }
     protected function deleteGalleryImage(Request $req)
     {
+        $id = $req->galleryId ?? null;
+        $res = ['status' => false, 'message' => 'Failed to delete gallery image', 'data' => null];
+        if (!empty($id) && $req->action == 'delete') {
+            $del = Gallery::where('id', $id)->delete();
+            if ($del) {
+                $res = ['status' => true, 'message' => 'Gallery image deleted successfully', 'data' => $del];
+            }
+        }
+        return $res;
     }
     //gallery part end
     //platform part
@@ -1463,8 +1473,17 @@ class adminController extends Controller
         toastr()->success($msg);
         return back();
     }
-    protected function deleteGalleryPlatform(Request $req)
+    protected function deletePlatform(Request $req)
     {
+        $id = $req->platformId ?? null;
+        $res = ['status' => false, 'message' => 'Failed to delete platform', 'data' => null];
+        if (!empty($id) && $req->action == 'delete') {
+            $del = Platform::where('id', $id)->delete();
+            if ($del) {
+                $res = ['status' => true, 'message' => 'Platform deleted successfully', 'data' => $del];
+            }
+        }
+        return $res;
     }
     //platform part end
     protected function admin_logout()

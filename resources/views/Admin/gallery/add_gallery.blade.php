@@ -21,7 +21,7 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Image Name</label>
                                     <input type="text" name="image_name" id="image_name" class="form-control"
@@ -30,7 +30,7 @@
                                         <strong id="user_id_error"></strong>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-6">
                                 <label>Image File</label>
                                 <input type="file" class="form-control" name="image_file" id="image_file" />

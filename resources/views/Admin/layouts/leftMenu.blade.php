@@ -324,7 +324,7 @@
     @toastr_js
     @toastr_render
     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
-    <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
+    {{-- <script src="assets/plugins/jquery/dist/jquery.min.js"></script> --}}
     <script src="assets/js/popper.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/plugins/chart-circle/circle-progress.min.js"></script>

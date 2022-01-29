@@ -191,6 +191,7 @@ Route::group(['domain' =>  env("ADMIN_APP_URL"), 'middleware' => 'adminAuth'], f
     Route::get('/platform', [adminController::class, 'viewPlatform']);
     Route::get('/add_platform', [adminController::class, 'addPlatform']);
     Route::post('/add_platform', [adminController::class, 'addPlatformAction']);
+    Route::delete('/platform', [adminController::class, 'deletePlatform']);
 });
 Route::group(['domain' =>  env("VENDOR_APP_URL")], function () {
 });
