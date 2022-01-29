@@ -4,9 +4,6 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Artisan;
-use Redirect;
-use DB;
 use App\Models\Contact;
 use App\Models\Song;
 use App\Models\Film;
@@ -29,12 +26,15 @@ use App\Models\Crbt;
 use App\Models\Primepartner;
 use App\Models\Partner;
 use App\Models\Additional;
-
+use App\Models\Gallery;
+use App\Models\Platform;
 use App\Models\Service;
-
 use App\Models\Religioncategory;
 use App\Models\Rsubcategory;
 use App\Models\Rdetails;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class userViewController extends Controller
 {
@@ -82,8 +82,10 @@ class userViewController extends Controller
     {
         $data4 = Primepartner::orderBy('id', 'DESC')->get();
         $data3 = Partner::orderBy('id', 'DESC')->get();
+        $platformData = Platform::all();
+        $galleryData = Gallery::orderBy('id', 'asc')->limit(8)->get();
         // dd($data4);
-        return view('home.home')->with('data3', $data3)->with('data4', $data4);
+        return view('home.home',  ['data3' => $data3, 'data4' => $data4, 'platform' => $platformData, 'gallery' => $galleryData]);
     }
     public function about(Request $request)
     {
@@ -651,30 +653,9 @@ class userViewController extends Controller
             return response()->json(['success' => true, 'msg' => 'Film add Successfully Done', 'id' => $save->id], 200);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function edit_track_action(Request $request)
     {
         $input = $request->all();
-
-
-
-
-
-
-
-
         $gs = DB::table('albam')->where('id', $request->id)
             ->update([
                 'content_type'  => $input['content_type'],

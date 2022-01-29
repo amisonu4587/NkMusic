@@ -1,6 +1,6 @@
-@extends('User.layouts.leftMenu') @section('title') Admin || Dashboard @endsection 
+@extends('User.layouts.leftMenu') @section('title') Admin || Dashboard @endsection
 @section('text')
-Dashboard
+    Dashboard
 @endsection
 
 @section('content')
@@ -15,7 +15,8 @@ Dashboard
                                 <div class="card-body">
                                     <div class="sales-tile">
                                         <div class="sales-tile-block">
-                                            <div class="sales-tile-icon violet"><i class="icon-supervised_user_circle"></i></div>
+                                            <div class="sales-tile-icon violet"><i class="icon-supervised_user_circle"></i>
+                                            </div>
                                             <div class="sales-tile-details">
                                                 <h5>Customers</h5>
                                                 <h2>250</h2>
@@ -66,7 +67,8 @@ Dashboard
                                 <div class="card-body">
                                     <div class="sales-tile">
                                         <div class="sales-tile-block">
-                                            <div class="sales-tile-icon peach"><i class="icon-settings_input_svideo"></i></div>
+                                            <div class="sales-tile-icon peach"><i class="icon-settings_input_svideo"></i>
+                                            </div>
                                             <div class="sales-tile-details">
                                                 <h5>Signups</h5>
                                                 <h2>350</h2>
@@ -78,13 +80,14 @@ Dashboard
                                 </div>
                             </div>
                         </div>
-                       
+
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="card gradient-violet-pink card-186">
                                 <div class="card-body">
                                     <div class="sales-tile">
                                         <div class="sales-tile-block">
-                                            <div class="sales-tile-icon violet"><i class="icon-supervised_user_circle"></i></div>
+                                            <div class="sales-tile-icon violet"><i class="icon-supervised_user_circle"></i>
+                                            </div>
                                             <div class="sales-tile-details">
                                                 <h5>Customers</h5>
                                                 <h2>250</h2>
@@ -113,14 +116,9 @@ Dashboard
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
                     </div>
                 </div>
-                
+
             </div>
         </div>
-@endsection
+    @endsection

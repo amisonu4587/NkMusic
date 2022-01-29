@@ -1,83 +1,88 @@
-@extends('layouts.master') @section('title') Music || Home @endsection @section('content')
-
-
-
-<div id="home" class="banner-3-wrap banner-3-bg-2 bubble-bg">
-      <div class="bubble-img">
-        <img src="assets-font/images/bubble-8.png" class="img-fluid" alt="">
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="banner-3-content style-2">
-              <h4>Welcome to NK Music Distribution</h4>
-              <h3 style="color:white;">We Upload and Monetize Your Tracks all Music Streaming Store Worldwide. YouTube and Facebook Copyright Protection</h3>
-              <div class="banner-buttons">
-                <a href="#" class="get-start">About Us</a>
-                <a href="#" class="buy">Contact Us</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="banner-play-button red">
-              <a href="#"><i class="fas fa-play"></i></a>
-            </div>
-          </div>
+@extends('layouts.master')
+@section('title') Music || Home @endsection
+@section('content')
+    <div id="home" class="banner-3-wrap banner-3-bg-2 bubble-bg">
+        <div class="bubble-img">
+            <img src="assets-font/images/bubble-8.png" class="img-fluid" alt="">
         </div>
-      </div>
-      <svg viewBox="0 0 1920 479.1">
-        <path class="st0" fill="#3A1948" d="M1562.5,260.9c-284.2,92.3-282.6,324-778.9,108.7C304.8,161.9,19.5,335.7,0,348.3v120.8v10h1920v-10V0
-        C1715.4,15.3,1846.7,168.6,1562.5,260.9z"/>
-      </svg>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="banner-3-content style-2">
+                        <h4>Welcome to NK Music Distribution</h4>
+                        <h3 style="color:white;">We Upload and Monetize Your Tracks all Music Streaming Store Worldwide.
+                            YouTube and Facebook Copyright Protection</h3>
+                        <div class="banner-buttons">
+                            <a href="#" class="get-start">About Us</a>
+                            <a href="#" class="buy">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="banner-play-button red">
+                        <a href="#"><i class="fas fa-play"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg viewBox="0 0 1920 479.1">
+            <path class="st0" fill="#3A1948" d="M1562.5,260.9c-284.2,92.3-282.6,324-778.9,108.7C304.8,161.9,19.5,335.7,0,348.3v120.8v10h1920v-10V0
+                                                                C1715.4,15.3,1846.7,168.6,1562.5,260.9z" />
+        </svg>
     </div>
 
     <!-- About -->
     <div class="pt80 pb80 bubble-bg purple-dark-bg" id="about">
-      <div class="bubble-img">
-        <img src="assets-font/images/bubble-9.png" class="img-fluid" alt="">
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="section-header-3 white-text">
-              <h2>About NK Music Distribution</h2>
-            </div>
-          </div>
-          <div class="w-100"></div>
-          <div class="col-lg-5">
-            <div class="content-thumb">
-              <img src="assets/img/nk.jpg" class="img-fluid" alt="">
-            </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="about-content white-text right-content-md">
-              <!-- <p>Lorem ipsum dolor sitamet consectetu ocilng elit. Donec eros aseb dui, suscipit ex uti commodo dignis justo acas turpis egestas. Nullam et cursus pet tellus sapien. Nam nec elementum elit. Pellentesque habitant morbi tristique senectus et netus emalesuada fames ac turpis egestas. Sed mollis ligula vitae in sodales lorem consec molestie. Quisque rices porttitor elit, vel aliquet odio.</p> -->
-           <p>NK Music Distrbution is powered by NK MUSIC PRODUCTION, is a Digital Music Distribution platform in India. We'll get your music distribution into Instagram, JioSaavn, Wynk Music, , Gaana, YouTube Music, YouTube Content ID, Facebook, Resso,   iTunes, Spotify, Soundcloud,Pandora, Deezer,130+ Other music streaming platforms and YouTube CMS services.</p>
-            </div>
-          </div>
+        <div class="bubble-img">
+            <img src="assets-font/images/bubble-9.png" class="img-fluid" alt="">
         </div>
-      </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section-header-3 white-text">
+                        <h2>About NK Music Distribution</h2>
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-lg-5">
+                    <div class="content-thumb">
+                        <img src="assets/img/nk.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-content white-text right-content-md">
+                        <!-- <p>Lorem ipsum dolor sitamet consectetu ocilng elit. Donec eros aseb dui, suscipit ex uti commodo dignis justo acas turpis egestas. Nullam et cursus pet tellus sapien. Nam nec elementum elit. Pellentesque habitant morbi tristique senectus et netus emalesuada fames ac turpis egestas. Sed mollis ligula vitae in sodales lorem consec molestie. Quisque rices porttitor elit, vel aliquet odio.</p> -->
+                        <p>NK Music Distrbution is powered by NK MUSIC PRODUCTION, is a Digital Music Distribution platform
+                            in India. We'll get your music distribution into Instagram, JioSaavn, Wynk Music, , Gaana,
+                            YouTube Music, YouTube Content ID, Facebook, Resso, iTunes, Spotify, Soundcloud,Pandora,
+                            Deezer,130+ Other music streaming platforms and YouTube CMS services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- About End -->
 
     <!-- Service -->
     <div id="service" class="pt185 pb300 purple-bg svg-wrap" id="service">
-      <svg class="svg-top-left" viewBox="0 0 1920 469.1">
-        <path d="M0,1080V610.9H1920V731.7c-19.5,12.6-304.8,186.4-783.6-21.3C640.1,495.1,641.7,726.8,357.5,819.1S204.6,1064.7,0,1080Z" transform="translate(0 -610.9)" fill="#3A1948"/>
-      </svg>
+        <svg class="svg-top-left" viewBox="0 0 1920 469.1">
+            <path
+                d="M0,1080V610.9H1920V731.7c-19.5,12.6-304.8,186.4-783.6-21.3C640.1,495.1,641.7,726.8,357.5,819.1S204.6,1064.7,0,1080Z"
+                transform="translate(0 -610.9)" fill="#3A1948" />
+        </svg>
 
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="section-header-3 white-text">
-              <h2>Our Services</h2>
-            </div>
-          </div>
-          <div class="w-100"></div>
-          <div class="col-lg-6 col-sm-6">
-            <div class="service white-border white-text purple-style">
-              <div class="icon">
-                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="78" height="65" viewBox="0 0 78 65">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section-header-3 white-text">
+                        <h2>Our Services</h2>
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="service white-border white-text purple-style">
+                        <div class="icon">
+                            {{-- <svg xmlns="http://www.w3.org/2000/svg" width="78" height="65" viewBox="0 0 78 65">
                   <g id="_1" data-name="1" transform="translate(-495 -1745)">
                     <circle id="Ellipse_32" data-name="Ellipse 32" cx="26.5" cy="26.5" r="26.5" transform="translate(495 1745)" opacity="0.954"/>
                     <g id="_001-chef" data-name="001-chef" transform="translate(508 1745)">
@@ -93,18 +98,20 @@
                   </g>
                 </svg> --}}
 
-                <img src="assets/img/1.png">
+                            <img src="assets/img/1.png">
 
 
-              </div>
-              <h3>Upload and Distribute your Music</h3>
-              <h3 style="margin-left: 10px;font-size:1.5rem;text-align:center;margin-top: 11px;">we deliver your music on Instagram, JioSaavn, Wynk Music, Gaana, YouTube Music, YouTube Content ID, Facebook, Resso and more music platforms.</h3>
-            </div>
-          </div>
-          <div class="col-lg-6 col-sm-6">
-            <div class="service white-border white-text purple-style">
-              <div class="icon">
-                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="77.986" height="65" viewBox="0 0 77.986 65">
+                        </div>
+                        <h3>Upload and Distribute your Music</h3>
+                        <h3 style="margin-left: 10px;font-size:1.5rem;text-align:center;margin-top: 11px;">we deliver your
+                            music on Instagram, JioSaavn, Wynk Music, Gaana, YouTube Music, YouTube Content ID, Facebook,
+                            Resso and more music platforms.</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="service white-border white-text purple-style">
+                        <div class="icon">
+                            {{-- <svg xmlns="http://www.w3.org/2000/svg" width="77.986" height="65" viewBox="0 0 77.986 65">
                   <g data-name="3" transform="translate(-1135 -1745)">
                     <circle data-name="Ellipse 34" cx="26.5" cy="26.5" r="26.5" transform="translate(1135 1745)" opacity="0.954"/>
                     <g data-name="004-beer" transform="translate(1121.5 1745)">
@@ -131,16 +138,17 @@
                     </g>
                   </g>
                 </svg> --}}
-                <img src="assets/img/2.png">
-              </div>
-              <h3>Mobile callertune (CRBT)</h3>
-              <h3 style="margin-left: 10px;font-size: 1.5rem;text-align:center;margin-top: 11px;">Jio – JioSaavn, Airtel – Wynk Music, Bsnl and Vi</h3>
-            </div>
-          </div>
-          <div class="col-lg-6 col-sm-6">
-            <div class="service white-border white-text purple-style">
-              <div class="icon">
-                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="77.986" height="65" viewBox="0 0 77.986 65">
+                            <img src="assets/img/2.png">
+                        </div>
+                        <h3>Mobile callertune (CRBT)</h3>
+                        <h3 style="margin-left: 10px;font-size: 1.5rem;text-align:center;margin-top: 11px;">Jio - JioSaavn,
+                            Airtel - Wynk Music, Bsnl and Vi</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="service white-border white-text purple-style">
+                        <div class="icon">
+                            {{-- <svg xmlns="http://www.w3.org/2000/svg" width="77.986" height="65" viewBox="0 0 77.986 65">
                   <g data-name="3" transform="translate(-1135 -1745)">
                     <circle data-name="Ellipse 34" cx="26.5" cy="26.5" r="26.5" transform="translate(1135 1745)" opacity="0.954"/>
                     <g data-name="004-beer" transform="translate(1121.5 1745)">
@@ -167,19 +175,19 @@
                     </g>
                   </g>
                 </svg> --}}
-                <img src="assets/img/3.png">
+                            <img src="assets/img/3.png">
 
-              </div>
-              <h3>
-                Youtube Monetization</h3>
-              <h3 style="margin-left: 10px;font-size: 1.5rem;text-align:center;margin-top: 11px;">
-              Monetize your music on YouTube and get paid when other people use your music.</h3>
-            </div>
-          </div>
-          <div class="col-lg-6 col-sm-6">
-            <div class="service white-border white-text purple-style">
-              <div class="icon">
-                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="85" height="65" viewBox="0 0 85 65">
+                        </div>
+                        <h3>
+                            Youtube Monetization</h3>
+                        <h3 style="margin-left: 10px;font-size: 1.5rem;text-align:center;margin-top: 11px;">
+                            Monetize your music on YouTube and get paid when other people use your music.</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="service white-border white-text purple-style">
+                        <div class="icon">
+                            {{-- <svg xmlns="http://www.w3.org/2000/svg" width="85" height="65" viewBox="0 0 85 65">
                   <g id="_4" data-name="4" transform="translate(-1400 -1745)">
                     <circle id="Ellipse_35" data-name="Ellipse 35" cx="26.5" cy="26.5" r="26.5" transform="translate(1400 1745)" opacity="0.954"/>
                     <g id="_003-dj" data-name="003-dj" transform="translate(1420 1745)">
@@ -205,367 +213,309 @@
                     </g>
                   </g>
                 </svg> --}}
-                <img src="assets/img/4.png">
+                            <img src="assets/img/4.png">
 
-              </div>
-              <h3>Receive your Earnings</h3>
-              <h3 style="margin-left: 10px;font-size: 1.5rem;text-align:center;margin-top: 11px;">Payments direct to your bank account.</h3>
+                        </div>
+                        <h3>Receive your Earnings</h3>
+                        <h3 style="margin-left: 10px;font-size: 1.5rem;text-align:center;margin-top: 11px;">Payments direct
+                            to your bank account.</h3>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <svg class="svg-bottom-left" viewBox="0 0 1920 469.1">
-        <path d="M0,610.9V1080H1920V959.2c-19.5-12.6-304.8-186.4-783.6,21.3-496.3,215.3-494.7-16.4-778.9-108.7S204.6,626.2,0,610.9Z" transform="translate(0 -610.9)" fill="#3A1948"/>
-      </svg>
+        <svg class="svg-bottom-left" viewBox="0 0 1920 469.1">
+            <path
+                d="M0,610.9V1080H1920V959.2c-19.5-12.6-304.8-186.4-783.6,21.3-496.3,215.3-494.7-16.4-778.9-108.7S204.6,626.2,0,610.9Z"
+                transform="translate(0 -610.9)" fill="#3A1948" />
+        </svg>
     </div>
     <!-- Service End -->
 
     <!-- Partner -->
     <div class="pt80 pb80 bubble-bg purple-dark-bg" id="partner">
-      <div class="bubble-img" style="margin-left: 9.75px; margin-top: -7.67px;">
-        <img src="images/bubble-13.png" class="img-fluid" alt="">
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="section-header-3 white-text">
-              <h2>Our Platforms</h2>
-            </div>
-          </div>
-          <div class="w-100"></div>
-          <div class="col">
-            <div class="clients owl-carousel owl-loaded owl-drag">
-              
-              
-              
-              
-              
-              
-            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1506px, 0px, 0px); transition: all 0.25s ease 0s; width: 3390px;"><div class="owl-item cloned" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/1.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item cloned" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/2.png" class="img-fluid" alt="">
-              </div></div><div class="owl-item cloned" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/3.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item cloned" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/4.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item cloned" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/5.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item cloned" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/1.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/2.png" class="img-fluid" alt="">
-              </div></div><div class="owl-item" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/3.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item active" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/4.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item active" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/5.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item active" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/1.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item active" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/2.png" class="img-fluid" alt="">
-              </div></div><div class="owl-item cloned active" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/3.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item cloned active" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/4.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item cloned" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/5.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item cloned" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/1.jpg" class="img-fluid" alt="">
-              </div></div><div class="owl-item cloned" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/2.png" class="img-fluid" alt="">
-              </div></div><div class="owl-item cloned" style="width: 168.333px; margin-right: 20px;"><div class="item">
-                <img src="assets-font/images/3.jpg" class="img-fluid" alt="">
-              </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
-          </div>
+        <div class="bubble-img" style="margin-left: 9.75px; margin-top: -7.67px;">
+            <img src="images/bubble-13.png" class="img-fluid" alt="">
         </div>
-      </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section-header-3 white-text">
+                        <h2>Our Platforms</h2>
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <div class="clients owl-carousel owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage"
+                                style="transform: translate3d(-1506px, 0px, 0px); transition: all 0.25s ease 0s; width: 3390px;">
+                                @if (isset($platform))
+                                    @foreach ($platform as $item)
+                                        <div class="owl-item cloned" style="width: 168.333px; margin-right: 20px;">
+                                            <div class="item">
+                                                <img src="{{ url($item->image) }}" alt="{{ $item->name }}"
+                                                    class="img-fluid" />
+                                            </div>
+                                        </div>
+                                    @endforeach
+
+                                @endif
+                            </div>
+                        </div>
+                        <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span
+                                    aria-label="Previous">
+                                    << /span></button><button type="button" role="presentation" class="owl-next"><span
+                                    aria-label="Next">></span></button></div>
+                        <div class="owl-dots disabled"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Partner End -->
 
     <!-- Pricing -->
     <div id="price" class="pt140 pb250 purple-bg svg-wrap">
-      <svg class="svg-top-left" viewBox="0 0 1920 469.1">
-        <path d="M1920,1080V610.9H0V731.7c19.5,12.6,304.8,186.4,783.6-21.3,496.3-215.3,494.7,16.4,778.9,108.7S1715.4,1064.7,1920,1080Z" transform="translate(0 -610.9)" fill="#3A1948"/>
-      </svg>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="section-header-3 white-text">
-              <h2>Our Membership Plans</h2>
+        <svg class="svg-top-left" viewBox="0 0 1920 469.1">
+            <path
+                d="M1920,1080V610.9H0V731.7c19.5,12.6,304.8,186.4,783.6-21.3,496.3-215.3,494.7,16.4,778.9,108.7S1715.4,1064.7,1920,1080Z"
+                transform="translate(0 -610.9)" fill="#3A1948" />
+        </svg>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section-header-3 white-text">
+                        <h2>Our Membership Plans</h2>
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-table pricing-light-purple">
+                        <h3 class="price">Free</h3>
+                        <p class="ticket-type">Individual Artists</p>
+                        <ul class="pricing-feature">
+                            <!-- <li>One Person entry pass</li>
+                                                                        <li>Regular Seating</li>
+                                                                        <li>Bufet dinner</li>
+                                                                        <li>Unlimited Drinks</li>
+                                                                        <li>VIP Service</li> -->
+                            <li>Single Release</li>
+                            <li> Bulk Release</li>
+                            <li> Schedule Release</li>
+                            <li> Revenue Share 80%</li>
+                            <li>Same Day Approval</li>
+                            <li>YouTube Content ID</li>
+                            <li>NK Music Production Label Name</li>
+                            <li>All Major Music Platforms</li>
+                        </ul>
+                        <a href="#" class="button">Signup</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-table pricing-light-purple">
+                        <h3 class="price">1500</h3>
+                        <p class="ticket-type">Label</p>
+                        <ul class="pricing-feature">
+                            <!-- <li>Group entry pass</li>
+                                                                        <li>Regular Seating</li>
+                                                                        <li>Bufet dinner</li>
+                                                                        <li>Unlimited Drinks</li>
+                                                                        <li>VIP Service</li> -->
+                            <li>Single Release</li>
+                            <li>Bulk Release</li>
+                            <li>Schedule Release</li>
+                            <li>Revenue Share 85%</li>
+                            <li>Same Day Approval</li>
+                            <li>YouTube Content ID</li>
+                            <li>Custom Label Name</li>
+                            <li>All Major Music Platforms</li>
+                        </ul>
+                        <a href="#" class="button">Sign up</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-table pricing-light-purple">
+                        <h3 class="price">2500</h3>
+                        <p class="ticket-type">White Label</p>
+                        <ul class="pricing-feature">
+                            <!-- <li>Two Person entry pass</li>
+                                                                        <li>Regular Seating</li>
+                                                                        <li>Bufet dinner</li>
+                                                                        <li>Unlimited Drinks</li>
+                                                                        <li>VIP Service</li> -->
+
+                            <li>Single Release</li>
+                            <li>Bulk Release</li>
+                            <li>Schedule Release</li>
+                            <li>Revenue Share 90%</li>
+                            <li>Same Day Approval</li>
+                            <li>YouTube Content ID</li>
+                            <li>Multi Custom Label Name</li>
+                            <li>All Major Music Platforms</li>
+                        </ul>
+                        <a href="#" class="button">Sign up</a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="w-100"></div>
-          <div class="col-lg-4 col-md-6">
-            <div class="pricing-table pricing-light-purple">
-              <h3 class="price">Free</h3>
-              <p class="ticket-type">Individual Artists</p>
-              <ul class="pricing-feature">
-                <!-- <li>One Person entry pass</li>
-                <li>Regular Seating</li>
-                <li>Bufet dinner</li>
-                <li>Unlimited Drinks</li>
-                <li>VIP Service</li> -->
-                <li>Single Release</li>
-                <li> Bulk Release</li>
-                <li> Schedule Release</li>
-                <li> Revenue Share 80%</li>
-                <li>Same Day Approval</li>
-                <li>YouTube Content ID</li>
-                <li>NK Music Production Label Name</li>
-                <li>All Major Music Platforms</li>
-
-
-
-              </ul>
-              <a href="#" class="button">Signup</a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="pricing-table pricing-light-purple">
-              <h3 class="price">1500</h3>
-              <p class="ticket-type">Label</p>
-              <ul class="pricing-feature">
-                <!-- <li>Group entry pass</li>
-                <li>Regular Seating</li>
-                <li>Bufet dinner</li>
-                <li>Unlimited Drinks</li>
-                <li>VIP Service</li> -->
-
-
-                <li>Single Release</li>
-                <li>Bulk Release</li>
-                <li>Schedule Release</li>
-                <li>Revenue Share 85%</li>
-                <li>Same Day Approval</li>
-                <li>YouTube Content ID</li>
-                <li>Custom Label Name</li>
-                
-                
-                
-                <li>All Major Music Platforms</li>
-
-
-
-
-              </ul>
-              <a href="#" class="button">Sign up</a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="pricing-table pricing-light-purple">
-              <h3 class="price">2500</h3>
-              <p class="ticket-type">White Label</p>
-              <ul class="pricing-feature">
-                <!-- <li>Two Person entry pass</li>
-                <li>Regular Seating</li>
-                <li>Bufet dinner</li>
-                <li>Unlimited Drinks</li>
-                <li>VIP Service</li> -->
-
-                <li>Single Release</li>
-                <li>Bulk Release</li>
-                <li>Schedule Release</li>
-                <li>Revenue Share 90%</li>
-                <li>Same Day Approval</li>
-                <li>YouTube Content ID</li>
-                <li>Multi Custom Label Name</li>
-                <li>All Major Music Platforms</li>
-
-
-
-
-              </ul>
-              <a href="#" class="button">Sign up</a>
-            </div>
-          </div>
         </div>
-      </div>
-      <svg class="svg-bottom-left" viewBox="0 0 1920 469.1">
-        <path d="M1920,610.9V1080H0V959.2c19.5-12.6,304.8-186.4,783.6,21.3,496.3,215.3,494.7-16.4,778.9-108.7S1715.4,626.2,1920,610.9Z" transform="translate(0 -610.9)" fill="#3A1948"/>
-      </svg>
+        <svg class="svg-bottom-left" viewBox="0 0 1920 469.1">
+            <path
+                d="M1920,610.9V1080H0V959.2c19.5-12.6,304.8-186.4,783.6,21.3,496.3,215.3,494.7-16.4,778.9-108.7S1715.4,626.2,1920,610.9Z"
+                transform="translate(0 -610.9)" fill="#3A1948" />
+        </svg>
     </div>
     <!-- Pricing End -->
 
     <!-- CTA -->
     <div class="bubble-bg purple-dark-bg">
-      <div class="bubble-img">
-        <img src="assets-font/images/bubble-11.png" class="img-fluid" alt="">
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="section-header-3 white-text">
-              <h2>What We Do</h2>
-            </div>
-          </div>
-          <div class="col-sm-12">
-            <!--<div class="video_wrp">-->
-            <!--    <p>Our Computer Repair Services</p>-->
-            <!--    <h2>We're here to help you manage your problem regular emails that will.</h2>-->
-            <!--</div>-->
-            <div class="funfact_wapr row" style="margin-bottom: 100px;">
-                
-              <div class="col-md-2 col-sm-12"></div>
-                <div class="col-md-3 col-sm-12">
-                    <div class="single-counter-box">
-                    <div class="facts_wrapper">
-                        <div class="service-icon">
-                          <i class="flaticon-architecture"></i>
-                        </div></br>
-                        <h3 class="counting" data-count="128" style="color:white;">0</h3>
-                        <h5 style="color:white;">LABELS</h5>
-                    </div>
+        <div class="bubble-img">
+            <img src="assets-font/images/bubble-11.png" class="img-fluid" alt="">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section-header-3 white-text">
+                        <h2>What We Do</h2>
                     </div>
                 </div>
+                <div class="col-sm-12">
+                    <!--<div class="video_wrp">-->
+                    <!--    <p>Our Computer Repair Services</p>-->
+                    <!--    <h2>We're here to help you manage your problem regular emails that will.</h2>-->
+                    <!--</div>-->
+                    <div class="funfact_wapr row" style="margin-bottom: 100px;">
 
-                <div class="col-md-3 col-sm-12">
-                    <div class="single-counter-box">
-                    <div class="facts_wrapper">
-                        <div class="service-icon">
-                          <i class="flaticon-blueprint"></i>
-                        </div></br>
-                        <h3 class="counting" data-count="7500" style="color:white;">0</h3>
-                        <h5 style="color:white;">RELEASES</h5>
-                    </div>
-                    </div>
-                </div>
+                        <div class="col-md-2 col-sm-12"></div>
+                        <div class="col-md-3 col-sm-12">
+                            <div class="single-counter-box">
+                                <div class="facts_wrapper">
+                                    <div class="service-icon">
+                                        <i class="flaticon-architecture"></i>
+                                    </div><br />
+                                    <h3 class="counting" data-count="128" style="color:white;">0</h3>
+                                    <h5 style="color:white;">LABELS</h5>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="col-md-3 col-sm-12">
-                    <div class="single-counter-box">
-                    <div class="facts_wrapper">
-                        <div class="service-icon">
-                            <i class="flaticon-appartment"></i>
-                          </div></br>
-                        <h3 class="counting" data-count="118" style="color:white;">0</h3>
-                        <h5 style="color:white;">SATISFIED CLIENTS</h5>
-                    </div>
+                        <div class="col-md-3 col-sm-12">
+                            <div class="single-counter-box">
+                                <div class="facts_wrapper">
+                                    <div class="service-icon">
+                                        <i class="flaticon-blueprint"></i>
+                                    </div><br />
+                                    <h3 class="counting" data-count="7500" style="color:white;">0</h3>
+                                    <h5 style="color:white;">RELEASES</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-12">
+                            <div class="single-counter-box">
+                                <div class="facts_wrapper">
+                                    <div class="service-icon">
+                                        <i class="flaticon-appartment"></i>
+                                    </div><br />
+                                    <h3 class="counting" data-count="118" style="color:white;">0</h3>
+                                    <h5 style="color:white;">SATISFIED CLIENTS</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-12"></div>
                     </div>
                 </div>
-                <div class="col-md-1 col-sm-12"></div>
             </div>
         </div>
-        </div>
-      </div>
     </div>
     <!-- CTA End -->
 
     <!-- Gallery -->
     <div id="gallery" class="pt170 pb220 purple-bg svg-wrap">
-      <svg class="svg-top-left" viewBox="0 0 1920 469.1">
-        <path d="M0,1080V610.9H1920V731.7c-19.5,12.6-304.8,186.4-783.6-21.3C640.1,495.1,641.7,726.8,357.5,819.1S204.6,1064.7,0,1080Z" transform="translate(0 -610.9)" fill="#3A1948"/>
-      </svg>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="section-header-3 white-text">
-              <h2>Gallery Photos</h2>
+        <svg class="svg-top-left" viewBox="0 0 1920 469.1">
+            <path
+                d="M0,1080V610.9H1920V731.7c-19.5,12.6-304.8,186.4-783.6-21.3C640.1,495.1,641.7,726.8,357.5,819.1S204.6,1064.7,0,1080Z"
+                transform="translate(0 -610.9)" fill="#3A1948" />
+        </svg>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section-header-3 white-text">
+                        <h2>Gallery Photos</h2>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="row club-gallery-2">
+                @if (isset($gallery))
+                    @foreach ($gallery as $item)
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="gallery-item gallery-light-blue">
+                                <img src="{{ url($item->image_file) }}" alt="{{ $item->image_name }}"
+                                    class="img-fluid" alt="">
+                                <div class="overlay">
+                                    <a href="{{ url($item->image_file) }}">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+            </div>
         </div>
-        <div class="row club-gallery-2">
-          <div class="col-lg-4 col-sm-6">
-            <div class="gallery-item gallery-light-blue">
-              <img src="assets-font/images/gallery/item-1.jpg" class="img-fluid" alt="">
-              <div class="overlay">
-                <a href="assets-font/images/gallery/item-1.jpg"><i class="fas fa-plus"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="gallery-item gallery-light-blue">
-              <img src="assets-font/images/gallery/item-2.jpg" class="img-fluid" alt="">
-              <div class="overlay">
-                <a href="assets-font/images/gallery/item-2.jpg"><i class="fas fa-plus"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="gallery-item gallery-light-blue">
-              <img src="assets-font/images/gallery/item-3.jpg" class="img-fluid" alt="">
-              <div class="overlay">
-                <a href="assets-font/images/gallery/item-3.jpg"><i class="fas fa-plus"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="gallery-item gallery-light-blue">
-              <img src="assets-font/images/gallery/item-4.jpg" class="img-fluid" alt="">
-              <div class="overlay">
-                <a href="assets-font/images/gallery/item-4.jpg"><i class="fas fa-plus"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="gallery-item gallery-light-blue">
-              <img src="assets-font/images/gallery/item-5.jpg" class="img-fluid" alt="">
-              <div class="overlay">
-                <a href="assets-font/images/gallery/item-5.jpg"><i class="fas fa-plus"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="gallery-item gallery-light-blue">
-              <img src="assets-font/images/gallery/item-6.jpg" class="img-fluid" alt="">
-              <div class="overlay">
-                <a href="assets-font/images/gallery/item-6.jpg"><i class="fas fa-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <svg class="svg-bottom-left" viewBox="0 0 1920 469.1">
-        <path d="M0,610.9V1080H1920V959.2c-19.5-12.6-304.8-186.4-783.6,21.3-496.3,215.3-494.7-16.4-778.9-108.7S204.6,626.2,0,610.9Z" transform="translate(0 -610.9)" fill="#3A1948"/>
-      </svg>
+        <svg class="svg-bottom-left" viewBox="0 0 1920 469.1">
+            <path
+                d="M0,610.9V1080H1920V959.2c-19.5-12.6-304.8-186.4-783.6,21.3-496.3,215.3-494.7-16.4-778.9-108.7S204.6,626.2,0,610.9Z"
+                transform="translate(0 -610.9)" fill="#3A1948" />
+        </svg>
     </div>
     <!-- Gallery End -->
 
     <!-- Performer -->
-    
+
     <!-- Performer End -->
 
     <!-- Blog -->
-    
+
     <!-- Blog End -->
 
     <!-- Clients -->
-    
+
     <!-- Clients End -->
 
     <!-- Contact -->
-    
+
     <!-- Contact End -->
 
     <!-- Subscribe -->
     <div class="pt90 pb90 bubble-bg purple-dark-bg">
-      <div class="bubble-img">
-        <img src="assets-font/images/bubble-14.png" class="img-fluid" alt="">
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="subscribe-center">
-              <div class="subscribe-content">
-                <h3>Get weekly program and <br> schedule subscribe our newsletter</h3>
-              </div>
-              <div class="subscribe-form">
-                <form class="form-inline newsletter-form">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"><i class="fas fa-envelope"></i></div>
-                    </div>
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Enter your email">
-                  </div>
-                  <button type="submit" class="btn button red-btn">Subscribe</button>
-                  <p class="newsletter-error">0 - Please enter a value</p>
-                  <p class="newsletter-success">Thank you for subscribing!</p>
-                </form>
-              </div>
-            </div>
-          </div>
+        <div class="bubble-img">
+            <img src="assets-font/images/bubble-14.png" class="img-fluid" alt="">
         </div>
-      </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="subscribe-center">
+                        <div class="subscribe-content">
+                            <h3>Get weekly program and <br> schedule subscribe our newsletter</h3>
+                        </div>
+                        <div class="subscribe-form">
+                            <form class="form-inline newsletter-form">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+                                        placeholder="Enter your email">
+                                </div>
+                                <button type="submit" class="btn button red-btn">Subscribe</button>
+                                <p class="newsletter-error">0 - Please enter a value</p>
+                                <p class="newsletter-success">Thank you for subscribing!</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Subscribe End -->
 

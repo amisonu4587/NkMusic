@@ -1388,7 +1388,7 @@ class adminController extends Controller
     //gallery part
     protected function viewGallery()
     {
-        $galleryData = Gallery::orderBy('id', 'asc')->paginate(8);
+        $galleryData = Gallery::orderBy('id', 'asc')->get();
         // return $data;
         return view('Admin.gallery.view_gallery', ['galleryData' => $galleryData]);
     }
@@ -1406,7 +1406,7 @@ class adminController extends Controller
         if ($validator->fails()) {
             return response()->json(['success' => false, 'errors' => $validator->getMessageBag()->toArray()], 400);
         }
-        $data['image_name'] = $data['image_name'] ?? 'gallery_image';
+        $data['image_name'] = str_replace(' ', '', $data['image_name']) ?? 'gallery_image';
         $image = $data['image_file'];
         $imagename = $data['image_name'] . rand() . '.' . $image->getClientOriginalExtension();
         $path = public_path('/uploads');
@@ -1458,7 +1458,7 @@ class adminController extends Controller
             return response()->json(['success' => false, 'errors' => $validator->getMessageBag()->toArray()], 400);
         }
         $image = $data['platform_image'];
-        $imagename = $data['platform_name'] . rand() . '.' . $image->getClientOriginalExtension();
+        $imagename = str_replace(' ', '', $data['platform_name']) . rand() . '.' . $image->getClientOriginalExtension();
         $path = public_path('/uploads');
         $image->move($path, $imagename);
         $save = Platform::create([

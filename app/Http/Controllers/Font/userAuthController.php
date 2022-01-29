@@ -9,10 +9,9 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
-use Redirect;
+// use Redirect;
 use Artisan;
-
-
+use Illuminate\Support\Facades\Redirect;
 
 class userAuthController extends Controller
 {
@@ -24,35 +23,27 @@ class userAuthController extends Controller
     public function userLogin(Request $request)
     {
         $details = User::where('email', request('email'))->first();
-           
-        if($details)
-        {
-                $role = $details->role;
-                // dd($role);
-                if ($role == 1)
-                {
-                        Log::info($request);
-                        if (Auth::attempt(['email' => request('email') , 'password' => request('password') ]))
-                        {
-                            return redirect('/userDashboard');
-                        }
-                        else
-                        {
-                            return Redirect::back()
-                                ->with('error', 'Invalid credentials !');
-                        }
-                }
-                else
-                {
+
+        if ($details) {
+            $role = $details->role;
+            // dd($role);
+            if ($role == 1) {
+                Log::info($request);
+                if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+                    return redirect('/userDashboard');
+                } else {
+
                     return Redirect::back()
                         ->with('error', 'Invalid credentials !');
                 }
-            }
-            else
-            {
+            } else {
                 return Redirect::back()
                     ->with('error', 'Invalid credentials !');
             }
+        } else {
+            return Redirect::back()
+                ->with('error', 'Invalid credentials !');
+        }
     }
 
     /**
@@ -71,6 +62,4 @@ class userAuthController extends Controller
 
         return redirect('/userLogin');
     }
-
-
 }
