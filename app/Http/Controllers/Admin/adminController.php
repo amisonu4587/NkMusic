@@ -459,17 +459,16 @@ class adminController extends Controller
             $profile_path = public_path('/rexcel');
             $excel_image->move($profile_path, $file_notice);
         }
+        if ($input['revenue_for'] == 'others') {
+            $input['revenue_for'] = $input['revenue_for_other'] ?? $input['revenue_for'];
+        }
 
         $add_music = [
             'user_id' => $input['user_id'],
             'month' => $input['month'],
-
             'revenue' => $input['revenue'],
             'revenue_for' => $input['revenue_for'],
             'excel_image' => $file_notice,
-
-
-
         ];
         $save = Mrevenue::create($add_music);
 
@@ -1451,18 +1450,18 @@ class adminController extends Controller
     {
         $data = $req->all() ?? [];
         $validator = Validator::make($data, [
-            'platform_name' => 'required',
             'platform_image' => 'required|mimes:jpg,jpeg,png,gif',
         ]);
         if ($validator->fails()) {
             return response()->json(['success' => false, 'errors' => $validator->getMessageBag()->toArray()], 400);
         }
         $image = $data['platform_image'];
-        $imagename = str_replace(' ', '', $data['platform_name']) . rand() . '.' . $image->getClientOriginalExtension();
+        $platform_name = empty($data['platform_name']) ? 'platform' : $data['platform_name'];
+        $imagename = str_replace(' ', '', $platform_name) . rand() . '.' . $image->getClientOriginalExtension();
         $path = public_path('/uploads');
         $image->move($path, $imagename);
         $save = Platform::create([
-            'name' => $data['platform_name'],
+            'name' => $platform_name,
             'image' => '/uploads/' . $imagename
         ]);
         if ($save) {

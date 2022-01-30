@@ -19,53 +19,27 @@
                     <table id="edd" class="table table-striped table-bordered w-100 text-nowrap">
                         <thead>
                             <tr>
-                              
                                 <th class="wd-25p"> User Name</th>
                                 <th class="wd-15p">Month</th>
-                         
                                 <th class="wd-15p">Report</th>
                                 <th class="wd-15p">Revenue For</th>
-
                                 <th class="wd-15p">Excel</th>
-
-
-
-
-                                <!-- <th class="wd-15p">Action</th> -->
-
-
-                                
-
-                                
                             </tr>
                         </thead>
                         <tbody>
-                        @if(isset($music_details))
-                         @foreach($music_details as $details)
-                            <tr>
-                            
-                                <td>{{$details->username}}</td>
-                                <td>{{$details->month}}</td>
-                                <td>{{$details->revenue}}</td>
-                                <td>{{$details->revenue_for}}</td>
+                            @if (isset($music_details))
+                                @foreach ($music_details as $details)
+                                    <tr>
 
-                                <td><a href="rexcel/{{$details->excel_image}}">{{$details->excel_image}}</a></td>
-
-                              
-
-                              
-                                
-                              
-                               
-                               
-                              
-
-                            </tr>
-                            @endforeach
-                               @endif
-
-                          
-                          
+                                        <td>{{ $details->username }}</td>
+                                        <td>{{ $details->month }}</td>
+                                        <td>{{ $details->revenue }}</td>
+                                        <td>{{ $details->revenue_for }}</td>
+                                        <td><a href="rexcel/{{ $details->excel_image }}">{{ $details->excel_image }}</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>
@@ -73,12 +47,10 @@
         </div>
     </div>
 </div>
-@endsection
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
-        $(function () {
+    $(document).ready(function() {
+        $(function() {
             $("#edd").dataTable({
                 bPaginate: true,
                 bLengthChange: true,
@@ -90,3 +62,5 @@
         });
     });
 </script>
+
+@endsection
